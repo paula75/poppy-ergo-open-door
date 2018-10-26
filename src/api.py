@@ -45,7 +45,14 @@ def show_us_dance():
     time.sleep(10)
     do_primitive(list_prims,'dance','stop')
 
+def open_door():
+    list_prims = list_primitives()
+    do_primitive(list_prims,'get_down_posture','start')
+    print('Opening door!')
+    time.sleep(3)
+    print('Door open!')
+    do_primitive(list_prims,'get_up_posture','stop')
+
+
 list_prim = list_primitives()
-do_primitive(list_prim, 'get_up_posture','start')
-do_primitive(list_prim, 'get_up_posture','stop')
-show_us_dance()
+open_door()
